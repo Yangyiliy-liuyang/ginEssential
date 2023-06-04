@@ -7,6 +7,7 @@ import (
 )
 
 func CollectRoute(r *gin.Engine) *gin.Engine {
+	r.Use(middleware.CORSMiddleware())
 	//注册
 	r.POST("/api/auth/register", controller.Register)
 	//登录
